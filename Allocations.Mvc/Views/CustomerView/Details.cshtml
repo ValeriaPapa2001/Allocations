@@ -1,0 +1,58 @@
+﻿@model DetailsCustomerViewModel
+@{
+    ViewData["Title"] = "Dettaglio Cliente"
+}
+
+    <h1> Cliente
+        </h1>
+    <div class="row">
+        <div class="col-12 col-sm-6">
+            <div class="row mb-3 mt-5">
+                <div class="col-12 col-sm-6 label-col">
+                    Nome 
+                </div>
+                <div class="col-12 col-sm-6 value-col">
+                    @Model.Name 
+                </div>
+            </div>
+            <div class="row mb-3 mt-5">
+                <div class="col-12 col-sm-6 label-col">
+                    Città
+                </div>
+                <div class="col-12 col-sm-6 value-col">
+                    @Model.City
+                </div>
+            </div>
+            <div class="row mb-3 mt-5">
+                <div class="col-12 col-sm-6 label-col">
+                    Regione
+                </div>
+                <div class="col-12 col-sm-6 value-col">
+                    @Model.Region
+                </div>
+                <div class="col-12 col-sm-6 label-col">
+                    Province
+                </div>
+                <div class="col-12 col-sm-6 value-col">
+                    @Model.Province
+                </div>
+            </div>
+            <div class="row mb-3 mt-5">
+                <div class="col-12 col-sm-6 label-col">
+                    Dimensione
+                </div>
+                <div class="col-12 col-sm-6 value-col">
+                    @Model.Dimension
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col text-center">
+            <a asp-action="Index" class="btn btn-primary">
+                Chiudi
+            </a>
+        </div>
+    </div>
+

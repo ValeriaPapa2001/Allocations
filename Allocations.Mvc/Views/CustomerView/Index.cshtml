@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CustomerGridViewModel>
+@{
+    ViewData["Title"] = "Clienti"
+}
+
+<h1>Gestione clienti</h1>
+<a class="btn btn-success btn-lg" asp-action=Create>
+    <i class="bi bi-plus-lg"></i>
+    Inserisci nuovo
+</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Città
+            </th>
+            <th>
+                Regione
+            </th>
+            <th>
+                Provincia
+            </th>
+            <th>
+                Dimensione
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Name</td>
+                <td>@c.City</td>
+                <td>@c.Region</td>
+                <td>@c.Province</td>
+                <td>@c.Dimension</td>
+                
+                <td>
+
+                    <a class="btn btn-success" asp-action="Details" asp-route-id="@c.Id">
+                <i class="bi bi-search"></i>
+            </a>
+            <a class="btn btn-warning" asp-action="Edit" asp-route-id="@c.Id">
+                <i class="bi bi-pencil"></i>
+            </a>
+            <button type="button" class="btn btn-danger" onclick="DeleteCostumer(@c.Id)">
+                <i class="bi bi-trash3"></i>
+            </button>
+          </td>
+          </tr>
+            
+        }
+    </tbody>
+</table>
+
+

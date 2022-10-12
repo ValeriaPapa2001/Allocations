@@ -1,0 +1,85 @@
+﻿@model EditEmployeeViewModel
+@{
+    ViewData["Title"] = "Aggiorna dipendente";
+    <h1>
+        Aggiorna dipendente esistente
+    </h1>
+    <div asp-validation-summary="ModelOnly" class="alert-danger"></div>
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <div class="row mb-3">
+            <div class="col-12 col-sm-4 text-sm-end">
+                <label asp-for="FirstName"></label>
+            </div>
+            <div class="col-12 col-sm-8">
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-sm-4 text-sm-end">
+                <label asp-for="LastName"></label>
+            </div>
+            <div class="col-12 col-sm-8">
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-sm-4 text-sm-end">
+                <label asp-for="BirthDate"></label>
+            </div>
+            <div class="col-12 col-sm-8">
+                <input asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate"></span>
+            </div>
+
+            <div class="col-12 col-sm-4 text-sm-end">
+                <label asp-for="StartDate"></label>
+            </div>
+            <div class="col-12 col-sm-8">
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-sm-4 text-sm-end">
+                <label asp-for="Email"></label>
+            </div>
+            <div class="col-12 col-sm-8">
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email"></span>
+            </div>
+
+            <div class="col-12 col-sm-4 text-sm-end">
+                <label asp-for="IdRole"></label>
+            </div>
+            <div class="col-12 col-sm-8">
+                <select asp-for="IdRole" class="form-control" asp-items="Model.Roles"></select>
+                <span asp-validation-for="IdRole"></span>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-sm-4 text-sm-end">
+                <label asp-for="HourCost"></label>
+            </div>
+             <div class="col-12 col-sm-8">
+            <input asp-for="HourCost" type="number" min="1" max="1000" step ="0.5"  class="form-control" />
+            <span asp-validation-for="HourCost"></span>
+        </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col tex-end">
+                <a asp-action="Index" class="btn btn-warning">Annulla</a>
+                <button type="submit" class="btn btn-primary">Aggiorna</button>
+            </div>
+
+        </div>
+    </form>
+}

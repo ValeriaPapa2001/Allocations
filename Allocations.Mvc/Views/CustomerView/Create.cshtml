@@ -1,0 +1,74 @@
+﻿@model CreateCustomerViewModel
+@{
+    ViewData["Title"] = "Aggiungi cliente";
+    <h1>
+        Aggiungi nuovo dipendente
+    </h1>
+
+    <div asp-validation-summary="ModelOnly" class="alert-danger"></div>
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <d class="row mb-3">
+            <div class="col-12 col-sm-4 text-sm-end">
+                <label asp-for="Name"></label>
+            </div>
+            <div class="col-12 col-sm-8">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name"></span>
+            </div>
+
+
+            <div class="row mb-3">
+                <div class="col-12 col-sm-4 text-sm-end">
+                    <label asp-for="City"></label>
+                </div>
+                <div class="col-12 col-sm-8">
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-12 col-sm-4 text-sm-end">
+                    <label asp-for="Region"></label>
+                </div>
+                <div class="col-12 col-sm-8">
+                    <input asp-for="Region" class="form-control" />
+                    <span asp-validation-for="Region"></span>
+                </div>
+
+                <div class="col-12 col-sm-4 text-sm-end">
+                    <label asp-for="Province"></label>
+                </div>
+                <div class="col-12 col-sm-8">
+                    <input asp-for="Province" class="form-control" />
+                    <span asp-validation-for="Province"></span>
+                </div>
+
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-12 col-sm-4 text-sm-end">
+                    <label asp-for="Dimension"></label>
+                </div>
+                <div class="col-12 col-sm-8">
+                    <input asp-for="Dimension" class="form-control" />
+                    <span asp-validation-for="Dimension"></span>
+                </div>
+            </div>
+
+
+            <hr />
+            <div class="row">
+                <div class="col tex-end">
+                    <a asp-action="Index" class="btn btn-warning">Annulla</a>
+                    <button type="submit" class="btn btn-primary">Crea</button>
+                </div>
+            </div>
+
+    </form>
+}
+
+
+
+
+

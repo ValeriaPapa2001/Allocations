@@ -1,0 +1,60 @@
+﻿@model IEnumerable<EmployeeGridViewModel>
+@{
+    ViewData["Title"] = "Dipendenti";
+}
+
+<h1>Gestione dipendenti</h1>
+<a class="btn btn-success btn-lg" asp-action=Create>
+    <i class="bi bi-plus-lg"></i>
+    Inserisci nuovo
+</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Cognome
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Data di nascita
+            </th>
+            <th>
+                Mansione
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.FirstName</td>
+                <td>@c.LastName</td>
+                <td>@c.Email</td>
+                <td>@c.BirthDate</td>
+                <td>@c.Role</td>
+                
+                <td>
+
+                    <a class="btn btn-success" asp-action="Details" asp-route-id="@c.Id">
+                <i class="bi bi-search"></i>
+            </a>
+            <a class="btn btn-warning" asp-action="Edit" asp-route-id="@c.Id">
+                <i class="bi bi-pencil"></i>
+            </a>
+            <button type="button" class="btn btn-danger" onclick="DeleteEmployee(@c.Id)">
+                <i class="bi bi-trash3"></i>
+            </button>
+          </td>
+          </tr>
+            
+        }
+    </tbody>
+</table>
+
+

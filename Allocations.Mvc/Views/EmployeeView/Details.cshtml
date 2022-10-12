@@ -1,0 +1,62 @@
+﻿@model DetailsEmployeeViewModel
+@{
+    ViewData["Title"] = "Scheda dipendente";
+}
+<h1> Scheda di @Model.FirstName @Model.LastName </h1>
+<div class="row">
+    <div class="col-12 col-sm-6">
+        <div class="row mb-3 mt-5">
+            <div class="col-12 col-sm-6 label-col">
+                Nome Completo
+            </div>
+            <div class="col-12 col-sm-6 value-col">
+                @Model.FirstName @Model.LastName
+            </div>
+        </div>
+        <div class="row mb-3 mt-5">
+            <div class="col-12 col-sm-6 label-col">
+                Email
+            </div>
+            <div class="col-12 col-sm-6 value-col">
+                @Model.Email
+            </div>
+        </div>
+        <div class="row mb-3 mt-5">
+            <div class="col-12 col-sm-6 label-col">
+                Data di nascita
+            </div>
+            <div class="col-12 col-sm-6 value-col">
+                @Model.BirthDate
+            </div>
+            <div class="col-12 col-sm-6 label-col">
+                Data inizio professione
+            </div>
+            <div class="col-12 col-sm-6 value-col">
+                @Model.StartDate
+            </div>
+        </div>
+        <div class="row mb-3 mt-5">
+            <div class="col-12 col-sm-6 label-col">
+                Costo orario
+            </div>
+            <div class="col-12 col-sm-6 value-col">
+                @Model.HourCost
+            </div>
+            <div class="col-12 col-sm-6 label-col">
+                Mansione
+            </div>
+            <div class="col-12 col-sm-6 value-col">
+                @Model.Role
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col text-center">
+        <a asp-action="Index" class="btn btn-primary">
+            Chiudi
+        </a>
+
+    </div>
+</div>
