@@ -19,4 +19,8 @@
     <ProjectReference Include="..\Allocations.Wcf\Allocations.Wcf.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\UserView\" />
+  </ItemGroup>
+
 </Project>
