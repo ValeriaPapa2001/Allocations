@@ -1,4 +1,5 @@
-﻿using Allocations.Core.Entities;
+﻿using Allocations.Api.Models;
+using Allocations.Core.Entities;
 using Allocations.Core.Interfaces;
 using Allocations.Lib;
 using Microsoft.AspNetCore.Mvc;

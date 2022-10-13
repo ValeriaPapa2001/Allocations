@@ -1,6 +1,7 @@
 ﻿using Allocations.Core.Entities;
 using Allocations.Core.Interfaces;
 using Allocations.Lib;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;

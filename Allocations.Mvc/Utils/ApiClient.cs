@@ -16,11 +16,11 @@ namespace Allocations.Mvc.Utils
         public async Task<IEnumerable<EmployeeContract>> GetAllEmployees()
         {
             var response = await _httpClient.GetAsync("api/Employee");
-            if(response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
                 IEnumerable<EmployeeContract> employees = JsonConvert.DeserializeObject<IEnumerable<EmployeeContract>>(content);
-                return employees;    
+                return employees;
             }
             return new List<EmployeeContract>();
         }
@@ -131,7 +131,7 @@ namespace Allocations.Mvc.Utils
             return null;
 
         }
-        
+
         public async Task<bool> InsertTimeSheet(TimeSheetContract timeSheet)
         {
             var content = new JsonContent(timeSheet);
@@ -149,7 +149,35 @@ namespace Allocations.Mvc.Utils
 
         #endregion
 
+        #region User
+        public async Task<string> CheckLoginAsync(string email, string password)
+        {
+            var content = new JsonContent(new
+            {
+                Email = email,
+                Password = password
+            });
 
+            var response = await _httpClient.PostAsync("api/User/Login", content);
+            var content1 = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<CudResultContract>(content1);
+            return result.Message;
+        }
+
+        public async Task<UserContract> GetUserByEmailAsync(string email)
+        {
+            var response = await _httpClient.GetAsync($"api/User/Email/{email}");
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<UserContract>(content);
+            }
+            return null;
+
+            #endregion
+
+            
+        }
         public void Dispose()
         {
             _httpClient.Dispose();
