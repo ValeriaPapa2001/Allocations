@@ -4,8 +4,7 @@ using Allocations.Mvc.Models;
 using Allocations.Mvc.DataContracts;
 using Allocations.Core.Entities;
 using Microsoft.AspNetCore.Mvc.Rendering;
-
-
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 
 namespace Allocations.Mvc.Controllers
 {
@@ -26,7 +25,7 @@ namespace Allocations.Mvc.Controllers
                 LastName = l.LastName,
                 Email = l.Email,
                 BirthDate = l.BirthDate,
-                Role = l.IdRole.ToString(),
+                Role = null,
             });
             return View(model);
 

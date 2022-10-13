@@ -19,10 +19,11 @@ namespace Allocations.Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddTransient<IUserBL, UserBL>();
             builder.Services.AddTransient<IEmployeeBL, EmployeeBL>();
             builder.Services.AddTransient<IRoleBL, RoleBL>();
 
-
+            builder.Services.AddTransient<IUserRepository, EFUserRepository>();
             builder.Services.AddTransient<IEmployeeRepository, EFEmployeeRepository>();
             builder.Services.AddTransient<IRoleRepository, EFRoleRepository>();
 

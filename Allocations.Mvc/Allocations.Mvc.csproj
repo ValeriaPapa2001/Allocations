@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\UserView\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
 
 </Project>
