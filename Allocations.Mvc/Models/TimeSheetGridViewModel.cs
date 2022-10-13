@@ -1,6 +1,6 @@
 ﻿namespace Allocations.Mvc.Models
 {
-    public class DetailsTimeSheetViewModel
+    public class TimeSheetGridViewModel
     {
         public int Id { get; set; }
 
@@ -15,6 +15,5 @@
         public string JobName { get; set; }
 
         public string CustomerName { get; set; }
-
     }
 }

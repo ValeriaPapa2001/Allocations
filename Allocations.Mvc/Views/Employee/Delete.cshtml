@@ -1,4 +1,22 @@
 ﻿@model DeleteEmployeeViewModel
 @{
-    
+    ViewData["Title"] = "Elimina dipendente";
 }
+
+<h1>Elimina @Model.FirstName @Model.LastName</h1>
+
+
+<div>
+
+    @*da implementare il messaggio*@
+
+</div>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="row">
+        <div class="col tex-end">
+            <a asp-action="Index" class="btn btn-success">Annulla</a>
+            <button type="submit" class="btn btn-primary">Elimina</button>
+        </div>
+    </div>
+</form>
