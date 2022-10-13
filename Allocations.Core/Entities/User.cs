@@ -12,6 +12,8 @@ namespace Allocations.Core.Entities
 
         public string Password { get; set; }
 
+        public string RollName { get; set; }
+
         public Roll Roll { get; set; }
     }
 

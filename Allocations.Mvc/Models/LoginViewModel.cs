@@ -5,6 +5,8 @@ namespace Allocations.Mvc.Models
 {
     public class LoginViewModel
     {
+        public string Nominativo { get; set; }
+
         [DisplayName("Email"), Required(ErrorMessage = "Email obbligatoria")]
         [EmailAddress(ErrorMessage = "Formato non valido")]
         public string Email { get; set; }

@@ -1,0 +1,76 @@
+﻿@model UpdateTimesheetViewModel
+@{
+    ViewData["Title"] = "Modifica timesheet";
+}
+
+<h1>
+    Modifica Timesheet
+</h1>
+
+<div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="row mb-3">
+        <div class="col-12 col-sm-4 text-sm-end">
+            <label asp-for="EmployeeId"></label>
+        </div>
+        <div class="col-12 col-sm-8">
+            <select asp-for="EmployeeId" class="form-control" asp-items="Model.Employees"></select>
+            <span asp-validation-for="EmployeeId"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 col-sm-4 text-sm-end">
+            <label asp-for="CustomerId"></label>
+        </div>
+        <div class="col-12 col-sm-8">
+            <select asp-for="CustomerId" class="form-control" asp-items="Model.Customers"></select>
+            <span asp-validation-for="CustomerId"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 col-sm-4 text-sm-end">
+            <label asp-for="JobId"></label>
+        </div>
+        <div class="col-12 col-sm-8">
+            <select asp-for="JobId" class="form-control" asp-items="Model.Jobs"></select>
+            <span asp-validation-for="JobId"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 col-sm-4 text-sm-end">
+            <label asp-for="ActivityName"></label>
+        </div>
+        <div class="col-12 col-sm-8">
+            <select asp-for="ActivityName" class="form-control" asp-items="Model.Activities"></select>
+            <span asp-validation-for="ActivityName"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 col-sm-4 text-sm-end">
+            <label asp-for="StartActivity"></label>
+        </div>
+        <div class="col-12 col-sm-8">
+            <input type="date" value="2022-10-01" asp-for="StartActivity" class="form-control" />
+            <span asp-validation-for="StartActivity"></span>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 col-sm-4 text-sm-end">
+            <label asp-for="HourActivity"></label>
+        </div>
+        <div class="col-12 col-sm-8">
+            <input type="number" min="1" max="10" step="0.5" asp-for="HourActivity" class="form-control" />
+            <span asp-validation-for="HourActivity"></span>
+        </div>
+    </div>
+
+
+    <hr />
+    <div class="row">
+        <div class="col tex-end">
+            <a asp-action="Index" class="btn btn-warning">Annulla</a>
+            <button type="submit" class="btn btn-primary">Aggiorna</button>
+        </div>
+    </div>
+</form>

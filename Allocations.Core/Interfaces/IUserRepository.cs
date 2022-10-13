@@ -9,6 +9,7 @@ namespace Allocations.Core.Interfaces
 {
     public interface IUserRepository : IRepositoryAsync<User>
     {
+        
         Task<User> FindUserByEmailAsync(string email);
     }
 
