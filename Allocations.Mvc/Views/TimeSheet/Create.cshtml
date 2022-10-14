@@ -11,20 +11,20 @@
 <form asp-action="Create" method="post">
     <div class="row mb-3">
         <div class="col-12 col-sm-4 text-sm-end">
-            <label asp-for="EmployeeId"></label>
+            <label asp-for="IdEmployee"></label>
         </div>
         <div class="col-12 col-sm-8">
-            <select asp-for="EmployeeId" class="form-control" asp-items="Model.Employees"></select>
-            <span asp-validation-for="EmployeeId"></span>
+            <select asp-for="IdEmployee" class="form-control" asp-items="Model.Employees"></select>
+            <span asp-validation-for="IdEmployee"></span>
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-12 col-sm-4 text-sm-end">
-            <label asp-for="CustomerId"></label>
+            <label asp-for="IdCustomer"></label>
         </div>
         <div class="col-12 col-sm-8">
-            <select asp-for="CustomerId" class="form-control" asp-items="Model.Customers"></select>
-            <span asp-validation-for="CustomerId"></span>
+            <select asp-for="IdCustomer" class="form-control" asp-items="Model.Customers"></select>
+            <span asp-validation-for="IdCustomer"></span>
         </div>
     </div>
     <div class="row mb-3">
@@ -38,11 +38,11 @@
     </div>
     <div class="row mb-3">
         <div class="col-12 col-sm-4 text-sm-end">
-            <label asp-for="ActivityName"></label>
+            <label asp-for="IdActivity"></label>
         </div>
         <div class="col-12 col-sm-8">
-            <select asp-for="ActivityName" class="form-control" asp-items="Model.Activities"></select>
-            <span asp-validation-for="ActivityName"></span>
+            <select asp-for="IdActivity" class="form-control" asp-items="Model.Activities"></select>
+            <span asp-validation-for="IdActivity"></span>
         </div>
     </div>
     <div class="row mb-3">

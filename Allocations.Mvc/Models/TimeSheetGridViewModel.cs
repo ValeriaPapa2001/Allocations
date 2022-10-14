@@ -10,10 +10,12 @@
 
         public string EmployeeName { get; set; }
 
+        public string CustomerName { get; set; }
+
         public string ActivityName { get; set; }
 
         public string JobName { get; set; }
 
-        public string CustomerName { get; set; }
+        
     }
 }

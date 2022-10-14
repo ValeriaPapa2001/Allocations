@@ -6,7 +6,7 @@ namespace Allocations.Mvc.Models
 {
     public class CreateTimeSheetViewModel
     {
-        public int TimesheetId { get; set; }
+        public int Id { get; set; }
 
         [DisplayName("Data dell'attività"), Required(ErrorMessage = "Data attività obbligatoria")]
         public DateTime StartActivity { get; set; }
@@ -15,14 +15,14 @@ namespace Allocations.Mvc.Models
         public decimal HourActivity { get; set; }
 
         [DisplayName("Dipendente"), Required(ErrorMessage = "Dipendente obbligatorio")]
-        public int EmployeeId { get; set; }
+        public int IdEmployee { get; set; }
 
         
         [DisplayName("Cliente"), Required(ErrorMessage = "Cliente obbligatorio")]
-        public int CustomerId { get; set; }
+        public int IdCustomer { get; set; }
 
         [DisplayName("Attività"), Required(ErrorMessage = "Attività obbligatoria")]
-        public string ActivityName { get; set; }
+        public int IdActivity { get; set; }
 
         [DisplayName("Commessa"), Required(ErrorMessage = "Commessa obbligatoria")]
         public int JobId { get; set; }
