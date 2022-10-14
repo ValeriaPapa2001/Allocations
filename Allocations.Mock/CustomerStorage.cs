@@ -33,6 +33,87 @@ namespace Allocations.Core.Mock
                 Dimension = "Small",
             });
 
+            Customers.Add(new Customer
+            {
+                Id = 3,
+                Name = "Tim",
+                City = "Milano",
+                Province = "MI",
+                Region = "Lombardia",
+                Dimension = "Enterprise",
+            });
+
+            Customers.Add(new Customer
+            {
+                Id = 4,
+                Name = "Avanade",
+                City = "Milano",
+                Province = "MI",
+                Region = "Lombardia",
+                Dimension = "Enterprise",
+            });
+
+            Customers.Add(new Customer
+            {
+                Id = 5,
+                Name = "Accenture",
+                City = "Milano",
+                Province = "MI",
+                Region = "Lombardia",
+                Dimension = "Enterprise",
+            });
+
+            Customers.Add(new Customer
+            {
+                Id = 6,
+                Name = "Prima",
+                City = "Torino",
+                Province = "TO",
+                Region = "Piemonte",
+                Dimension = "Enterprise",
+            });
+
+            Customers.Add(new Customer
+            {
+                Id = 7,
+                Name = "Electra",
+                City = "Roma",
+                Province = "RM",
+                Region = "Lazio",
+                Dimension = "Enterprise",
+            });
+
+            Customers.Add(new Customer
+            {
+                Id = 8,
+                Name = "Amabile",
+                City = "Bologna",
+                Province = "BO",
+                Region = "Emilia Romagna",
+                Dimension = "Small",
+            });
+
+            Customers.Add(new Customer
+            {
+                Id = 9,
+                Name = "Vodafone",
+                City = "Milano",
+                Province = "MI",
+                Region = "Lombardia",
+                Dimension = "Enterprise",
+            });
+
+            Customers.Add(new Customer
+            {
+                Id = 10,
+                Name = "Eolo",
+                City = "Milano",
+                Province = "MI",
+                Region = "Lombardia",
+                Dimension = "Enterprise",
+            });
+
+
 
         }
     }
