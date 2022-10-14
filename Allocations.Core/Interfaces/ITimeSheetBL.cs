@@ -11,10 +11,13 @@ namespace Allocations.Core.Interfaces
     public interface ITimeSheetBL
     {
         Task<IEnumerable<TimeSheet>> GetAllTimeSheetsAsync();
+        Task<IEnumerable<TimeSheet>> GetAllTimeSheetsDetailedAsync();
+        Task<TimeSheet> GetTimeSheetDetailedAsync(int id);
         Task<TimeSheet> GetTimeSheetsByIdAsync(int id);
 
         Task<CudResult> InsertTimeSheetAsync(TimeSheet timeSheet);
         Task<CudResult> UpdateTimeSheetAsync(TimeSheet timeSheet);
+
         
     }
 }

@@ -12,7 +12,7 @@ namespace Allocations.Mvc.Models
         public DateTime StartActivity { get; set; }
 
         [DisplayName("Ore"), Required(ErrorMessage = "Ore obbligatorie")]
-        public decimal HourActivity { get; set; }
+        public TimeSpan HourActivity { get; set; }
 
         [DisplayName("Dipendente"), Required(ErrorMessage = "Dipendente obbligatorio")]
         public int IdEmployee { get; set; }
@@ -31,7 +31,7 @@ namespace Allocations.Mvc.Models
         public IEnumerable<SelectListItem> Employees { get; set; }
 
         public IEnumerable<SelectListItem> Activities { get; set; }
-        public IEnumerable<SelectListItem> Job { get; set; }
+        public IEnumerable<SelectListItem> Jobs { get; set; }
 
     }
 }

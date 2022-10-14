@@ -1,0 +1,24 @@
+﻿@model ChartModel
+
+@{
+    ViewData["Title"] = "Statistiche";
+}
+
+    <div class="row">
+        <div class="col col-12 col-sm-6">
+            <select asp-for="IdEmployee" id="chartInput" class="form-control" asp-items="Model.Employees"></select>
+        </div>
+        <div class="col col-12 col-sm-3">
+        <button class="btn btn-primary" onclick=SelectEmployeeActivity()>Attività</button>
+        </div>
+    <div class="col col-12 col-sm-3">
+        <button class="btn btn-primary" onclick=SelectEmployeeCustomer()>Cliente</button>
+    </div>
+    </div>
+<div class="lower-panel">
+
+</div>
+@section scripts{
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+}
+

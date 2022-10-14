@@ -24,6 +24,16 @@ namespace Allocations.Core.BusinnessLogic
             return await _timeSheetRepository.FetchAsync();
         }
 
+        public async Task<IEnumerable<TimeSheet>> GetAllTimeSheetsDetailedAsync()
+        {
+            return await _timeSheetRepository.GetAllTimeSheetsDetailedAsync();
+        }
+
+        public Task<TimeSheet> GetTimeSheetDetailedAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<TimeSheet> GetTimeSheetsByIdAsync(int id)
         {
             return await _timeSheetRepository.GetByIdAsync(id);

@@ -1,4 +1,5 @@
-﻿using Allocations.Core.Entities;
+﻿using Allocations.Core.BusinnessLogic;
+using Allocations.Core.Entities;
 using Allocations.Lib.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace Allocations.Core.Interfaces
 {
     public interface ITimeSheetRepository: IRepositoryAsync<TimeSheet>
     {
+        
+        Task<IEnumerable<TimeSheet>> GetAllTimeSheetsDetailedAsync(Func<TimeSheet, bool> filter = null);
         Task<TimeSheet> GetTimeSheetDetailedAsync(int id);
     }
 }

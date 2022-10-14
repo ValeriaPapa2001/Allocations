@@ -1,0 +1,19 @@
+﻿@model IList<AxisChartModel>
+
+@{
+    var activity = Html.Raw(Json.Serialize(Model.Select(x => x.x)));
+    var data = Html.Raw(Json.Serialize(Model.Select(x => x.y)));
+}
+<div>
+    <canvas id="ActivityChart"></canvas>
+</div>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        CreateActivityChart(document.getElementById('ActivityChart'), JSON.parse('@activity'), @data);
+    })
+</script>

@@ -6,7 +6,7 @@
 
         public DateTime StartActivity { get; set; }
 
-        public decimal HourActivity { get; set; }
+        public TimeSpan HourActivity { get; set; }
 
         public string EmployeeName { get; set; }
 

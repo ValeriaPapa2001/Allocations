@@ -18,6 +18,15 @@ namespace Allocations.Core.Ef.Repositories
             _context = context;
         }
 
+        public async Task<IEnumerable<TimeSheet>> GetAllTimeSheetsDetailedAsync(Func<TimeSheet, bool> filter = null)
+        {
+            if (filter != null)
+            {
+                return _context.TimeSheets.Include(x => x.Employee).Include(x => x.Job).Include(x => x.Customer).Include(x=>x.Activity).Where(filter).ToList();
+            }
+            return await _context.TimeSheets.Include(x => x.Employee).Include(x => x.Job).Include(x => x.Customer).Include(x=>x.Activity).ToListAsync();
+        }
+
         public async Task<TimeSheet> GetTimeSheetDetailedAsync(int id)
         {
             return await _context.TimeSheets.Where(t => t.Id == id).Include(t => t.Employee).FirstOrDefaultAsync();
