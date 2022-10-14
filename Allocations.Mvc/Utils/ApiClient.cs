@@ -109,7 +109,7 @@ namespace Allocations.Mvc.Utils
 
         public async Task<IEnumerable<TimeSheetContract>> GetAllTimeSheets()
         {
-            var response = await _httpClient.GetAsync("api/TimeSheet");
+            var response = await _httpClient.GetAsync("api/TimeSheet/details");
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
@@ -121,7 +121,7 @@ namespace Allocations.Mvc.Utils
 
         public async Task<TimeSheetContract> GetTimeSheet(int id)
         {
-            var response = await _httpClient.GetAsync($"api/TimeSheet/{id}");
+            var response = await _httpClient.GetAsync($"api/TimeSheet/details/{id}");
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();

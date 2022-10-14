@@ -1,4 +1,5 @@
-﻿using Allocations.Core.Entities;
+﻿using Allocations.Core.BusinnessLogic;
+using Allocations.Core.Entities;
 using Allocations.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -74,6 +75,28 @@ namespace Allocations.Api.Controllers
             }
             return Ok(timeSheet);
         }
+
+        [HttpGet]
+        [Route("details")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<TimeSheet>))]
+        public async Task<IActionResult> GetAllTimesheetsDetailed()
+        {
+            return Ok(await _logic.GetAllTimeSheetsDetailedAsync());
+        }
+
+        [HttpGet("details/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(TimeSheet))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetDetailedTimesheet(int id)
+        {
+            TimeSheet tim = await _logic.GetTimeSheetDetailedAsync(id);
+            if (tim == null)
+                return NotFound();
+            return Ok(tim);
+        }
+
+
+
 
         //[HttpDelete("{id}")]
         //[ProducesResponseType(StatusCodes.Status200OK)]
