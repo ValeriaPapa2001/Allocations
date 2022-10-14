@@ -6,11 +6,13 @@
 <h1>Elimina @Model.FirstName @Model.LastName</h1>
 
 
-<div>
+    <div class="alert alert-danger">Questa operazione eseguirà la rimozione del recordo attuale dal database irreversibilmente.
+    Sei sicuro di voler eliminare il dipendente @Model.FirstName + @Model.LastName?
 
-    @*da implementare il messaggio*@
+    </div>
 
-</div>
+
+
 <form asp-action="Delete" method="post">
     <input type="hidden" asp-for="Id" />
     <div class="row">
