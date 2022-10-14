@@ -1,4 +1,4 @@
-﻿@model IList<AxisChartModel>
+﻿@model IList<ChartAxisViewModel>
 
 @{
     var activity = Html.Raw(Json.Serialize(Model.Select(x => x.x)));

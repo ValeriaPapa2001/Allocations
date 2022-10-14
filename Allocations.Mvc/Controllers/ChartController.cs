@@ -13,6 +13,7 @@ namespace Allocations.Mvc.Controllers
         {
             _client = client;
         }
+
         public async Task<IActionResult> Chart()
         {
             var employee = await _client.GetEmployees();
@@ -21,36 +22,17 @@ namespace Allocations.Mvc.Controllers
             {
                 list.Add(new SelectListItem { Text = e.FirstName + " " + e.LastName, Value = e.EmployeeId.ToString() });
             }
-            ChartModel model = new ChartModel
+            ChartViewModel model = new ChartViewModel
             {
                 Employees = list
             };
             return View(model);
         }
 
-        public async Task<IActionResult> ActivityChart(int id)
-        {
-            var timeSheets = (await _client.GetMonthlyTimesheetByEmployeeId(id)).GroupBy(x => x.IdActivity);
-            IList<ChartModel> list = new List<ChartModel>();
-            foreach (var t in timeSheets)
-            {
-                list.Add(new AxisChartModel { x = t.Key, y = t.Sum(x => x.HourActivity) });
-            }
-            return PartialView("_ActivityChart", list);
-
+        
         }
 
-        public async Task<IActionResult> ChartByCustomer(int id)
-        {
-            var timesheets = (await _client.GetMonthlyTimesheetByEmployeeId(id)).GroupBy(x => x.Customer.Name);
-            IList<ChartModel> list = new List<ChartModel>();
-            foreach (var t in timesheets)
-            {
-                list.Add(new AxisChartModel { x = t.Key, y = t.Sum(x => x.HourActivity) });
-            }
-            return PartialView("_ChartByCustomer", list);
-        }
     }
-
 }
 
+        

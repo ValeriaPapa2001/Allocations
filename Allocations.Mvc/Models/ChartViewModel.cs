@@ -2,9 +2,10 @@
 
 namespace Allocations.Mvc.Models
 {
-    public class ChartModel
+    public class ChartViewModel
     {
         public int IdEmployee { get; set; }
         public List<SelectListItem> Employees;
     }
+
 }

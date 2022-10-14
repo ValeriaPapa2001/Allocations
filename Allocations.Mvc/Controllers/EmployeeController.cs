@@ -31,10 +31,29 @@ namespace Allocations.Mvc.Controllers
 
         }
 
-        [HttpPost]
         public async Task<IActionResult> DeleteEmployee(int id)
         {
-            var result = await _client.DeleteEmployee(id);
+            var employee = await _client.GetEmployee(id);
+            if (employee == null)
+            {
+                return RedirectToAction("Index");
+            }
+            DeleteEmployeeViewModel model = new DeleteEmployeeViewModel
+            {
+                Id = id,
+                FirstName = employee.FirstName,
+                LastName = employee.LastName,
+            };
+            return View(model);
+        }
+
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteEmployee(DeleteEmployeeViewModel employee)
+        {
+            var result = await _client.DeleteEmployee(employee.Id);
             if (result)
             {
                 return Json(new
@@ -43,6 +62,7 @@ namespace Allocations.Mvc.Controllers
                 });
             }
             return Json(new { Success = false, Message = "Impossibile eliminare il dipendente" });
+            return View(employee);
         }
 
         public async Task<IActionResult> Create()

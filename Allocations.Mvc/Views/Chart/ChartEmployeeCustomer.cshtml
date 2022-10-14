@@ -1,0 +1,18 @@
+﻿@model IList<ChartAxisViewModel>
+
+@{
+    var customer = Html.Raw(Json.Serialize(Model.Select(x => x.x)));
+    var data = Html.Raw(Json.Serialize(Model.Select(x => x.y)));
+}
+<div>
+    <canvas id="CustomerChart"></canvas>
+</div>
+
+
+
+
+<script>
+    $(document).ready(function () {
+        CreateCustomerChart(document.getElementById('CustomerChart'), JSON.parse('@customer'), @data);
+    })
+</script>
